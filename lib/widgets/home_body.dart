@@ -1,4 +1,6 @@
 import 'package:call_life/widgets/custom_app_bar.dart';
+import 'package:call_life/widgets/home_card_data.dart';
+import 'package:call_life/widgets/kpis_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeBody extends StatelessWidget {
@@ -6,6 +8,45 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(children: [CustomAppBar()]);
+    return Column(
+      children: [
+        const CustomAppBar(),
+        Expanded(
+          child: GridView.builder(
+            padding: const EdgeInsets.all(10),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: 3,
+            ),
+            itemCount: kpisCardData.length,
+            itemBuilder: (context, index) {
+              return KpisCard(cardData: kpisCardData[index]);
+            },
+          ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              'Key Quality Indicators (KQIS)',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Colors.grey, width: 0.5),
+              ),
+              child: const Text(
+                'Measured overtime & per tenant',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }
