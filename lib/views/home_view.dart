@@ -1,4 +1,4 @@
-import 'package:call_life/widgets/kpis_body.dart';
+import 'package:call_life/widgets/home_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -8,6 +8,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: KpisBody());
+    return Scaffold(
+      body: Padding(padding: const EdgeInsets.all(16.0), child: HomeBody()),
+    );
   }
 }
