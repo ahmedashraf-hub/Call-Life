@@ -1,14 +1,14 @@
 import 'package:flutter/widgets.dart';
 
-class KpisCardModel {
+class KqisCardModel {
   final String title;
-  final Icon icon;
+  final Widget icon;
   final String count;
   final String status;
   final Color statusColor;
   final String subtitle;
 
-  KpisCardModel({
+  KqisCardModel({
     required this.title,
     required this.icon,
     required this.count,

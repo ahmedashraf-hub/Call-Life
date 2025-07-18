@@ -1,10 +1,10 @@
 import 'package:call_life/models/kpis_card_model.dart';
 import 'package:flutter/material.dart';
 
-class KpisCard extends StatelessWidget {
+class KqisCard extends StatelessWidget {
   final KqisCardModel cardData;
 
-  const KpisCard({super.key, required this.cardData});
+  const KqisCard({super.key, required this.cardData});
 
   @override
   Widget build(BuildContext context) {

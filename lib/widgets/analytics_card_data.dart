@@ -1,12 +1,13 @@
 import 'package:call_life/models/analytics_card_model.dart';
 import 'package:call_life/models/trend_card_model.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 List<AnalyticsCardModel> analyticsCardData = [
   AnalyticsCardModel(
     title: 'Peak Usage Period',
     period: '2PM - 4PM',
-    icon: const Icon(Icons.watch_later_outlined),
+    icon: const FaIcon(FontAwesomeIcons.clock),
     subtitle: 'Highest activity across all tenants',
     status: '+23% from last week',
     statusColor: Colors.green,
@@ -14,7 +15,7 @@ List<AnalyticsCardModel> analyticsCardData = [
   AnalyticsCardModel(
     title: 'User Engagement',
     period: '8AM - 10AM',
-    icon: const Icon(Icons.people_outline),
+    icon: const FaIcon(FontAwesomeIcons.users),
     subtitle: 'Most active user sessions',
     status: '-15% from last week',
     statusColor: Colors.red,
@@ -22,7 +23,7 @@ List<AnalyticsCardModel> analyticsCardData = [
   AnalyticsCardModel(
     title: 'Server Load',
     period: '6PM - 8PM',
-    icon: const Icon(Icons.dns_outlined),
+    icon: const FaIcon(FontAwesomeIcons.server),
     subtitle: 'Peak server resource usage',
     status: '+10% from last week',
     statusColor: Colors.green,
@@ -30,7 +31,7 @@ List<AnalyticsCardModel> analyticsCardData = [
   AnalyticsCardModel(
     title: 'App Downloads',
     period: '12PM - 2PM',
-    icon: const Icon(Icons.download_outlined),
+    icon: const FaIcon(FontAwesomeIcons.arrowDown),
     subtitle: 'Highest download activity',
     status: 'No change',
     statusColor: Colors.grey,
@@ -60,6 +61,7 @@ List<TrendCardModel> trendCardData = [
     changeColor: Colors.red,
   ),
 ];
+
 final Map<String, double> usageDistribution = {
   'Government Services': 45,
   'Healthcare': 28,

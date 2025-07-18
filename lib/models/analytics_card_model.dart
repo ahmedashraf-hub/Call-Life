@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AnalyticsCardModel {
   final String title;
   final String period;
-  final Icon icon;
+  final Widget icon;
   final String subtitle;
   final String status;
   final Color statusColor;

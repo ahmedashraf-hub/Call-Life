@@ -1,8 +1,8 @@
 import 'package:call_life/models/kpis_card_model.dart';
 import 'package:flutter/material.dart';
 
-List<KpisCardModel> kpisCardData = [
-  KpisCardModel(
+List<KqisCardModel> kpisCardData = [
+  KqisCardModel(
     title: 'Active Calls',
     icon: Icon(Icons.phone),
     count: '47',
@@ -10,7 +10,7 @@ List<KpisCardModel> kpisCardData = [
     statusColor: Colors.green,
     subtitle: 'Currently in progress',
   ),
-  KpisCardModel(
+  KqisCardModel(
     title: 'Active Calls',
     icon: Icon(Icons.phone),
     count: '47',
@@ -18,7 +18,7 @@ List<KpisCardModel> kpisCardData = [
     statusColor: Colors.green,
     subtitle: 'Currently in progress',
   ),
-  KpisCardModel(
+  KqisCardModel(
     title: 'Active Calls',
     icon: Icon(Icons.phone),
     count: '47',
@@ -26,7 +26,7 @@ List<KpisCardModel> kpisCardData = [
     statusColor: Colors.green,
     subtitle: 'Currently in progress',
   ),
-  KpisCardModel(
+  KqisCardModel(
     title: 'Active Calls',
     icon: Icon(Icons.phone),
     count: '47',
@@ -34,7 +34,7 @@ List<KpisCardModel> kpisCardData = [
     statusColor: Colors.green,
     subtitle: 'Currently in progress',
   ),
-  KpisCardModel(
+  KqisCardModel(
     title: 'Active Calls',
     icon: Icon(Icons.phone),
     count: '47',
@@ -42,7 +42,7 @@ List<KpisCardModel> kpisCardData = [
     statusColor: Colors.green,
     subtitle: 'Currently in progress',
   ),
-  KpisCardModel(
+  KqisCardModel(
     title: 'Active Calls',
     icon: Icon(Icons.phone),
     count: '47',
@@ -50,36 +50,62 @@ List<KpisCardModel> kpisCardData = [
     statusColor: Colors.green,
     subtitle: 'Currently in progress',
   ),
-  KpisCardModel(
-    title: 'Active Calls',
-    icon: Icon(Icons.phone),
-    count: '47',
-    status: '+12%',
+  // KpisCardModel(
+  //   title: 'Active Calls',
+  //   icon: Icon(Icons.phone),
+  //   count: '47',
+  //   status: '+12%',
+  //   statusColor: Colors.green,
+  //   subtitle: 'Currently in progress',
+  // ),
+  // KpisCardModel(
+  //   title: 'Active Calls',
+  //   icon: Icon(Icons.phone),
+  //   count: '47',
+  //   status: '+12%',
+  //   statusColor: Colors.green,
+  //   subtitle: 'Currently in progress',
+  // ),
+  // KpisCardModel(
+  //   title: 'Active Calls',
+  //   icon: Icon(Icons.phone),
+  //   count: '47',
+  //   status: '+12%',
+  //   statusColor: Colors.green,
+  //   subtitle: 'Currently in progress',
+  // ),
+  // KpisCardModel(
+  //   title: 'Active Calls',
+  //   icon: Icon(Icons.phone),
+  //   count: '47',
+  //   status: '+12%',
+  //   statusColor: Colors.green,
+  //   subtitle: 'Currently in progress',
+  // ),
+];
+List<KqisCardModel> kqisCardData = [
+  KqisCardModel(
+    title: 'ASA (Average Speed of Answer)',
+    icon: Icon(Icons.watch_later_outlined),
+    count: '12.3s',
+    status: ' -8%',
     statusColor: Colors.green,
-    subtitle: 'Currently in progress',
+    subtitle: 'vs last month\nAverage time to answer',
   ),
-  KpisCardModel(
-    title: 'Active Calls',
-    icon: Icon(Icons.phone),
-    count: '47',
-    status: '+12%',
+  KqisCardModel(
+    title: 'FCR (First Call Resolution)',
+    icon: Icon(Icons.data_saver_off_rounded),
+    count: '78.4%',
+    status: '+5%',
     statusColor: Colors.green,
-    subtitle: 'Currently in progress',
+    subtitle: 'vs last month\nResolved on first contact',
   ),
-  KpisCardModel(
-    title: 'Active Calls',
-    icon: Icon(Icons.phone),
-    count: '47',
-    status: '+12%',
-    statusColor: Colors.green,
-    subtitle: 'Currently in progress',
-  ),
-  KpisCardModel(
-    title: 'Active Calls',
-    icon: Icon(Icons.phone),
-    count: '47',
-    status: '+12%',
-    statusColor: Colors.green,
-    subtitle: 'Currently in progress',
+  KqisCardModel(
+    title: 'AHT (Average Handling Time)',
+    icon: Icon(Icons.watch_later_outlined),
+    count: '4m 32s',
+    status: '+2%',
+    statusColor: Colors.brown,
+    subtitle: 'vs last month\nAverage call duration',
   ),
 ];

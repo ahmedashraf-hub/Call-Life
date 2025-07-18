@@ -13,43 +13,58 @@ class AnalyticsBody extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const CustomAppBar(), // Assuming CustomAppBar is error-free
+            const CustomAppBar(),
             Container(
-              height: 300, // Fixed height for GridView to avoid layout issues
+              height: 220,
               padding: const EdgeInsets.all(10),
               child: GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: MediaQuery.of(context).size.width > 800
                       ? 4
                       : 2,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
-                  childAspectRatio: 1.4,
+                  childAspectRatio: 1.8,
                 ),
                 itemCount: analyticsCardData.length,
                 itemBuilder: (context, index) {
                   final card = analyticsCardData[index];
                   return Card(
+                    color: Colors.white,
                     elevation: 2,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(32.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          card.icon,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                card.title,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              card.icon,
+                            ],
+                          ),
                           const SizedBox(height: 8),
                           Text(
-                            card.title,
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                            textAlign: TextAlign.center,
+                            card.period,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
                           ),
+                          const SizedBox(height: 8),
                           Text(
                             card.subtitle,
                             style: const TextStyle(fontSize: 12),
                             textAlign: TextAlign.center,
                           ),
+                          const SizedBox(height: 8),
                           Text(
                             card.status,
                             style: TextStyle(
@@ -64,7 +79,6 @@ class AnalyticsBody extends StatelessWidget {
                 },
               ),
             ),
-            // Original Row with TrendCard and ProgressBar unchanged
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -102,19 +116,56 @@ class AnalyticsBody extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 1,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: usageDistribution.entries
-                        .map(
-                          (entry) => ProgressBar(
-                            label: entry.key,
-                            percentage: entry.value,
-                            title: '',
-                            subtitle: '',
+                  child: Card(
+                    color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 16.0,
+                            ),
+                            child: const Text(
+                              'Usage Distribution',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
                           ),
-                        )
-                        .toList(),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 16.0,
+                              vertical: 8.0,
+                            ),
+                            child: Text(
+                              'Call volume by tenant catgory',
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: usageDistribution.entries
+                                .map(
+                                  (entry) => ProgressBar(
+                                    label: entry.key,
+                                    percentage: entry.value,
+
+                                    title: '',
+                                    subtitle: '',
+                                  ),
+                                )
+                                .toList(),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ],

@@ -27,20 +27,6 @@ class ProgressBar extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              subtitle,
-              style: const TextStyle(fontSize: 14, color: Colors.grey),
-            ),
-            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -57,12 +43,14 @@ class ProgressBar extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 10),
+
+            // const SizedBox(height: 10),
             LinearProgressIndicator(
+              borderRadius: BorderRadius.circular(8),
               value: percentage.clamp(0.0, 100.0) / 100,
               backgroundColor: Colors.blue,
               color: Colors.green[900],
-              minHeight: 10,
+              minHeight: 8,
             ),
           ],
         ),
